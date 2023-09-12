@@ -1,0 +1,11 @@
+<script>
+    function naardebackend(){
+        alert("yes");
+        fetch("http://127.0.0.1:5000/")
+        .then(r => r.text())
+        .then(d => console.log(d))
+    }
+
+</script>
+<input>
+<button onclick="naardebackend()">Klik hier</button>
