@@ -10,13 +10,13 @@ openai.api_key = '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'
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/")
-def hello_world():
+@app.route("/<devraag>")
+def hello_world(devraag):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{
             "role": "system",
-            "content": "wat is de hoofdstad van italie"
+            "content": devraag
         }],
         temperature=0.5,
         max_tokens=256

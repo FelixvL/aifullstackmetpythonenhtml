@@ -1,6 +1,7 @@
 <script>
     function naardebackend(){
-        fetch("http://127.0.0.1:5000/")
+        var invoerv = document.getElementById("invoervraag").value;
+        fetch("http://127.0.0.1:5000/"+invoerv)
         .then(r => r.text())
         .then(d => {
             console.log(d);
@@ -9,6 +10,6 @@
     }
 
 </script>
-<input>
+<input id="invoervraag">
 <button onclick="naardebackend()">Klik hier</button>
 <div id="uitkomst"></div>
